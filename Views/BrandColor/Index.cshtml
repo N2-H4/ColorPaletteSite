@@ -1,0 +1,396 @@
+@{
+    ViewData["Title"] = "Brand-Supporting-Neutral Model";
+}
+
+@section Scripts {
+    <script src="~/js/BrandColorScripts.js" asp-append-version="true"></script>
+}
+
+<div class="container">
+    <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Brand Color</h1>
+        Brand Color is a main color characteristic for the brand that determines the feel of the site. It is used throughout UI as splashes of color, for example buttons, links, navigation
+        and icons. It is advised to choose Brand Color with saturation and value above 70.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker1"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor1" class="picked-color"></div>
+            <label class="form-label" for="HueField1">Hue</label>
+            <input id="HueField1" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField1">Saturiation</label>
+            <input id="SaturationField1" type="text" class="form-control" />
+            <label class="form-label" for="ValueField1">Value</label>
+            <input id="ValueField1" type="text" class="form-control" />
+            <label class="form-label" for="HexField1">Hex Value</label>
+            <input id="HexField1" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShades('1')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade11" class="shade-field"></div>
+        <input id="shadefield11" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade21" class="shade-field"></div>
+        <input id="shadefield21" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade31" class="shade-field"></div>
+        <input id="shadefield31" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade41" class="shade-field"></div>
+        <input id="shadefield41" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade51" class="shade-field"></div>
+        <input id="shadefield51" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade61" class="shade-field"></div>
+        <input id="shadefield61" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade71" class="shade-field"></div>
+        <input id="shadefield71" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade81" class="shade-field"></div>
+        <input id="shadefield81" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade91" class="shade-field"></div>
+        <input id="shadefield91" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Supporting Color - Neutral Information</h1>
+        Used in a few specific places in order to draw attention of the user to neutral informational messages and dialogs.
+        It is advised for saturation and value of Supporting Colors to stay close to Brand Color.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker2"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor2" class="picked-color"></div>
+            <label class="form-label" for="HueField2">Hue</label>
+            <input id="HueField2" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField2">Saturiation</label>
+            <input id="SaturationField2" type="text" class="form-control" />
+            <label class="form-label" for="ValueField2">Value</label>
+            <input id="ValueField2" type="text" class="form-control" />
+            <label class="form-label" for="HexField2">Hex Value</label>
+            <input id="HexField2" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShades('2')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade12" class="shade-field"></div>
+        <input id="shadefield12" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade22" class="shade-field"></div>
+        <input id="shadefield22" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade32" class="shade-field"></div>
+        <input id="shadefield32" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade42" class="shade-field"></div>
+        <input id="shadefield42" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade52" class="shade-field"></div>
+        <input id="shadefield52" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade62" class="shade-field"></div>
+        <input id="shadefield62" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade72" class="shade-field"></div>
+        <input id="shadefield72" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade82" class="shade-field"></div>
+        <input id="shadefield82" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade92" class="shade-field"></div>
+        <input id="shadefield92" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Supporting Color - Confirmation</h1>
+        Used in a few specific places in order to draw attention of the user to success messages and other positive confirmations.
+        Common choice for this color is some shade of green.
+        It is advised for saturation and value of Supporting Colors to stay close to Brand Color.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker3"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor3" class="picked-color"></div>
+            <label class="form-label" for="HueField3">Hue</label>
+            <input id="HueField3" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField3">Saturiation</label>
+            <input id="SaturationField3" type="text" class="form-control" />
+            <label class="form-label" for="ValueField3">Value</label>
+            <input id="ValueField3" type="text" class="form-control" />
+            <label class="form-label" for="HexField3">Hex Value</label>
+            <input id="HexField3" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShades('3')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade13" class="shade-field"></div>
+        <input id="shadefield13" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade23" class="shade-field"></div>
+        <input id="shadefield23" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade33" class="shade-field"></div>
+        <input id="shadefield33" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade43" class="shade-field"></div>
+        <input id="shadefield43" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade53" class="shade-field"></div>
+        <input id="shadefield53" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade63" class="shade-field"></div>
+        <input id="shadefield63" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade73" class="shade-field"></div>
+        <input id="shadefield73" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade83" class="shade-field"></div>
+        <input id="shadefield83" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade93" class="shade-field"></div>
+        <input id="shadefield93" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Supporting Color - Warning</h1>
+        Used in a few specific places in order to draw attention of the user to warning messages.
+        Common choice for this color is some shade of yellow/orange.
+        It is advised for saturation and value of Supporting Colors to stay close to Brand Color.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker4"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor4" class="picked-color"></div>
+            <label class="form-label" for="HueField4">Hue</label>
+            <input id="HueField4" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField4">Saturiation</label>
+            <input id="SaturationField4" type="text" class="form-control" />
+            <label class="form-label" for="ValueField4">Value</label>
+            <input id="ValueField4" type="text" class="form-control" />
+            <label class="form-label" for="HexField4">Hex Value</label>
+            <input id="HexField4" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShades('4')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade14" class="shade-field"></div>
+        <input id="shadefield14" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade24" class="shade-field"></div>
+        <input id="shadefield24" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade34" class="shade-field"></div>
+        <input id="shadefield34" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade44" class="shade-field"></div>
+        <input id="shadefield44" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade54" class="shade-field"></div>
+        <input id="shadefield54" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade64" class="shade-field"></div>
+        <input id="shadefield64" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade74" class="shade-field"></div>
+        <input id="shadefield74" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade84" class="shade-field"></div>
+        <input id="shadefield84" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade94" class="shade-field"></div>
+        <input id="shadefield94" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Supporting Color - Error</h1>
+        Used in a few specific places in order to draw attention of the user to error messages and other dangerous situations.
+        Common choice for this color is some shade of red.
+        It is advised for saturation and value of Supporting Colors to stay close to Brand Color.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker5"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor5" class="picked-color"></div>
+            <label class="form-label" for="HueField5">Hue</label>
+            <input id="HueField5" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField5">Saturiation</label>
+            <input id="SaturationField5" type="text" class="form-control" />
+            <label class="form-label" for="ValueField5">Value</label>
+            <input id="ValueField5" type="text" class="form-control" />
+            <label class="form-label" for="HexField5">Hex Value</label>
+            <input id="HexField5" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShades('5')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade15" class="shade-field"></div>
+        <input id="shadefield15" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade25" class="shade-field"></div>
+        <input id="shadefield25" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade35" class="shade-field"></div>
+        <input id="shadefield35" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade45" class="shade-field"></div>
+        <input id="shadefield45" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade55" class="shade-field"></div>
+        <input id="shadefield55" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade65" class="shade-field"></div>
+        <input id="shadefield65" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade75" class="shade-field"></div>
+        <input id="shadefield75" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade85" class="shade-field"></div>
+        <input id="shadefield85" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade95" class="shade-field"></div>
+        <input id="shadefield95" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Neutral Color</h1>
+        Most of the UI should be made up of neutral colors, which means some form of gray.
+        It is adviased to choose main neutral grey with saturation and value lesser than 50 and create shades based on chosen color.
+        Shades of white are also commonly used as neutral colors.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker6"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor6" class="picked-color"></div>
+            <label class="form-label" for="HueField6">Hue</label>
+            <input id="HueField6" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField6">Saturiation</label>
+            <input id="SaturationField6" type="text" class="form-control" />
+            <label class="form-label" for="ValueField6">Value</label>
+            <input id="ValueField6" type="text" class="form-control" />
+            <label class="form-label" for="HexField6">Hex Value</label>
+            <input id="HexField6" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="col"><button type="button" class="btn btn-secondary m-1" onclick="setShadesNeutral('6')">Generate Shades</button></div>
+    <div class="col align-self-center text-center">
+        <div id="shade16" class="shade-field"></div>
+        <input id="shadefield16" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade26" class="shade-field"></div>
+        <input id="shadefield26" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade36" class="shade-field"></div>
+        <input id="shadefield36" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade46" class="shade-field"></div>
+        <input id="shadefield46" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade56" class="shade-field"></div>
+        <input id="shadefield56" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade66" class="shade-field"></div>
+        <input id="shadefield66" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade76" class="shade-field"></div>
+        <input id="shadefield76" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade86" class="shade-field"></div>
+        <input id="shadefield86" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade96" class="shade-field"></div>
+        <input id="shadefield96" type="text" class="form-control mt-1" readonly/>
+    </div>
+  </div>
+</div>

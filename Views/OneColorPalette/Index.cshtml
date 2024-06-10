@@ -1,0 +1,301 @@
+@{
+    ViewData["Title"] = "One Color Palette";
+}
+
+@section Scripts {
+    <script src="~/js/OneColorPalettesScripts.js" asp-append-version="true"></script>
+}
+
+<div class="container">
+    <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>One Color Palette</h1>
+        Create a palette of 27 colors based on a single selected color. New colors are created by shifting of hue, saturation and value. New color palettes can be created by choosing few
+        colors from the set. It is advised for the selected base color to have saturation and value above 50.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker"></div>
+            <div class="mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="checkboxDirection">
+                <label class="form-check-label" for="checkboxDirection">Reverse hue shift direction</label>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor" class="picked-color"></div>
+            <label class="form-label" for="HueField">Hue</label>
+            <input id="HueField" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField">Saturiation</label>
+            <input id="SaturationField" type="text" class="form-control" />
+            <label class="form-label" for="ValueField">Value</label>
+            <input id="ValueField" type="text" class="form-control" />
+            <label class="form-label" for="HexField">Hex Value</label>
+            <input id="HexField" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="container">
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-secondary w-25" onclick="generatePalette()">Generate Shades</button>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade11" class="shade-field"></div>
+                <input id="shadefield11" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade21" class="shade-field"></div>
+                <input id="shadefield21" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade31" class="shade-field"></div>
+                <input id="shadefield31" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade41" class="shade-field"></div>
+                <input id="shadefield41" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade51" class="shade-field"></div>
+                <input id="shadefield51" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade61" class="shade-field"></div>
+            <input id="shadefield61" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade71" class="shade-field"></div>
+                <input id="shadefield71" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade81" class="shade-field"></div>
+                <input id="shadefield81" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade91" class="shade-field"></div>
+                <input id="shadefield91" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade12" class="shade-field"></div>
+                <input id="shadefield12" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade22" class="shade-field"></div>
+                <input id="shadefield22" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade32" class="shade-field"></div>
+                <input id="shadefield32" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade42" class="shade-field"></div>
+                <input id="shadefield42" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade52" class="shade-field"></div>
+                <input id="shadefield52" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade62" class="shade-field"></div>
+            <input id="shadefield62" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade72" class="shade-field"></div>
+                <input id="shadefield72" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade82" class="shade-field"></div>
+                <input id="shadefield82" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade92" class="shade-field"></div>
+                <input id="shadefield92" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade13" class="shade-field"></div>
+                <input id="shadefield13" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade23" class="shade-field"></div>
+                <input id="shadefield23" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade33" class="shade-field"></div>
+                <input id="shadefield33" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade43" class="shade-field"></div>
+                <input id="shadefield43" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade53" class="shade-field"></div>
+                <input id="shadefield53" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade63" class="shade-field"></div>
+            <input id="shadefield63" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade73" class="shade-field"></div>
+                <input id="shadefield73" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade83" class="shade-field"></div>
+                <input id="shadefield83" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade93" class="shade-field"></div>
+                <input id="shadefield93" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Overlay</h1>
+        Use overlay blending mode with one selected color to modify perviously genereted colors for even more color choices.
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker2"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor2" class="picked-color"></div>
+            <label class="form-label" for="HueField2">Hue</label>
+            <input id="HueField2" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField2">Saturiation</label>
+            <input id="SaturationField2" type="text" class="form-control" />
+            <label class="form-label" for="ValueField2">Value</label>
+            <input id="ValueField2" type="text" class="form-control" />
+            <label class="form-label" for="HexField2">Hex Value</label>
+            <input id="HexField2" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-center p-3 border rounded">
+    <div class="container">
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-secondary w-25" onclick="generateOverlay()">Generate Overlayed Shades</button>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade112" class="shade-field"></div>
+                <input id="shadefield112" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade212" class="shade-field"></div>
+                <input id="shadefield212" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade312" class="shade-field"></div>
+                <input id="shadefield312" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade412" class="shade-field"></div>
+                <input id="shadefield412" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade512" class="shade-field"></div>
+                <input id="shadefield512" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade612" class="shade-field"></div>
+            <input id="shadefield612" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade712" class="shade-field"></div>
+                <input id="shadefield712" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade812" class="shade-field"></div>
+                <input id="shadefield812" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade912" class="shade-field"></div>
+                <input id="shadefield912" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade122" class="shade-field"></div>
+                <input id="shadefield122" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade222" class="shade-field"></div>
+                <input id="shadefield222" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade322" class="shade-field"></div>
+                <input id="shadefield322" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade422" class="shade-field"></div>
+                <input id="shadefield422" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade522" class="shade-field"></div>
+                <input id="shadefield522" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade622" class="shade-field"></div>
+            <input id="shadefield622" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade722" class="shade-field"></div>
+                <input id="shadefield722" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade822" class="shade-field"></div>
+                <input id="shadefield822" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade922" class="shade-field"></div>
+                <input id="shadefield922" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col align-self-center text-center">
+                <div id="shade132" class="shade-field"></div>
+                <input id="shadefield132" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center">
+                <div id="shade232" class="shade-field"></div>
+                <input id="shadefield232" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade332" class="shade-field"></div>
+                <input id="shadefield332" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade432" class="shade-field"></div>
+                <input id="shadefield432" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade532" class="shade-field"></div>
+                <input id="shadefield532" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade632" class="shade-field"></div>
+            <input id="shadefield632" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade732" class="shade-field"></div>
+                <input id="shadefield732" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade832" class="shade-field"></div>
+                <input id="shadefield832" type="text" class="form-control mt-1" readonly/>
+            </div>
+            <div class="col align-self-center ">
+                <div id="shade932" class="shade-field"></div>
+                <input id="shadefield932" type="text" class="form-control mt-1" readonly/>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

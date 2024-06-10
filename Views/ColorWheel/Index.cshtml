@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Color Harmony Rules";
+}
+
+@section Scripts {
+    <script src="~/js/ColorWheelScripts.js" asp-append-version="true"></script>
+}
+
+<div class="container">
+    <div class="row p-3 border rounded">
+        <div class="col-lg-3 col-sm-12">
+        <h1>Color Harmony Rules</h1>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="analogous" value="option1" onclick="readyInputs()">
+                <label class="form-check-label" for="analogous">Analogous</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="complementary" value="option2" onclick="readyInputs()">
+                <label class="form-check-label" for="complementary">Complementary</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="triad" value="option3" onclick="readyInputs()">
+                <label class="form-check-label" for="triad">Triad</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Radios" id="monochromatic" value="option4" onclick="readyInputs()">
+                <label class="form-check-label" for="monochromatic">Monochromatic</label>
+            </div>
+            <label class="form-label mt-3" for="angle">Angle</label>
+            <input id="angle" type="range" class="form-range"/>
+            <label class="form-label" for="factor">Factor</label>
+            <input id="factor" type="range" class="form-range"/>
+        </div>
+        <div class="col-3" style="min-width: 300px;">
+            <div id="picker"></div>
+        </div>
+        <div class="col-2">
+            <div class="form-outline" data-mdb-input-init>
+            <div id="PickedColor" class="picked-color"></div>
+            <label class="form-label" for="HueField">Hue</label>
+            <input id="HueField" type="text" class="form-control" />
+            <label class="form-label" for="SaturationField">Saturiation</label>
+            <input id="SaturationField" type="text" class="form-control" />
+            <label class="form-label" for="ValueField">Value</label>
+            <input id="ValueField" type="text" class="form-control" />
+            <label class="form-label" for="HexField">Hex Value</label>
+            <input id="HexField" type="text" class="form-control"/>
+        </div>
+    </div>
+  </div>
+  <div class="row p-3 border rounded">
+    <div class="col align-self-center text-center">
+        <div id="shade1" class="shade-field" style="width:150px;height:75px;"></div>
+        <input id="shadefield1" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center">
+        <div id="shade2" class="shade-field" style="width:150px;height:75px;"></div>
+        <input id="shadefield2" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade3" class="shade-field" style="width:150px;height:75px;"></div>
+        <input id="shadefield3" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade4" class="shade-field" style="width:150px;height:75px;"></div>
+        <input id="shadefield4" type="text" class="form-control mt-1" readonly/>
+    </div>
+    <div class="col align-self-center ">
+        <div id="shade5" class="shade-field" style="width:150px;height:75px;"></div>
+        <input id="shadefield5" type="text" class="form-control mt-1" readonly/>
+    </div>
+</div>
+</div>
